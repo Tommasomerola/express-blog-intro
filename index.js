@@ -19,6 +19,8 @@ app.listen(port, () => {
 // Creiamo un array dove inserire una lista di almeno 5 post, 
 // per ognuno indicare titolo, contenuto, immagine e tags (tags è un array di stringhe)
 
+app.get("/bacheca", (req, res) => {
+
 
 const bacheca = [
     {
@@ -52,3 +54,6 @@ const bacheca = [
       tags: ["dolce", "pane", "cacao", "rustico", "lombardo", "tradizione"]
     }
   ];
+
+  res.json(bacheca);
+});
