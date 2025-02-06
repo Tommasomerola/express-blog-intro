@@ -6,15 +6,18 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-// Home route 
+// home route 
 app.get("/", (req, res) => {
   res.send("Server del mio blog");
 });
 
-// Avvio del server
+// avvio del server
 app.listen(port, () => {
   console.log(`Server avviato su http://localhost:${port}`);
 });
+
+// configuro asset statici
+app.use(express.static("public"));
 
 // Creiamo un array dove inserire una lista di almeno 5 post, 
 // per ognuno indicare titolo, contenuto, immagine e tags (tags è un array di stringhe)
